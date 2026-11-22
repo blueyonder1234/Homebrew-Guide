@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Updating/Downgrading Manually &mdash; Homebrew Guide  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/table_styling.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Upgrading/Downgrading Manually With a PC" href="manualchoiupgrade.html" />
+    <link rel="prev" title="Using and Configuring Hekate" href="hekate.html" />
+<meta name="sourcename" content="usingcfw/manualupgrade.rst.txt" />
+<script>
+    var head = document.getElementsByTagName('HEAD')[0];  
+    var link = document.createElement('link'); 
+    link.rel = 'stylesheet';  
+    link.type = 'text/css'; 
+    var theme = localStorage.getItem('user_theme');
+    if (theme == "dark") {
+        link.href = '/_static/theme-dark.css';
+    } else {
+        link.href = '/_static/theme-light.css';
+    }
+    head.appendChild(link);
+</script>
+
+
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/beforestarting.html">Before Starting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/checkingrcm.html">Checking RCM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/choosinganexploit.html">Choosing an Exploit</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Hacking Your Switch</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../hacking/fuseegelee.html">fusee-gelee</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hacking/nereba.html">Nereba</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hacking/caffeine.html">Caffeine</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Using CFW</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="hekate.html">Using and Configuring Hekate</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Updating/Downgrading Manually</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#step-1-preparing-files">Step 1: Preparing Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-2-installing-the-new-firmware-version">Step 2: Installing the New Firmware Version</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manualchoiupgrade.html">Upgrading/Downgrading Manually With a PC</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Creating an emuMMC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../emummc/emummc.html">Create an emuMMC</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Homebrew Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../homebrew_dev/introduction.html">Introduction to Homebrew development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homebrew_dev/app_dev.html">Homebrew app development</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Misc</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting.html">Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wiiu.html">Wii U Homebrew Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../credits.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../donate.html">Donate</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../switch-theme.html">Switch Theme (Light &lt;–&gt; Dark)</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Homebrew Guide</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Updating/Downgrading Manually</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/noahc3/Homebrew-Guide/blob/master/usingcfw/manualupgrade.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="updating-downgrading-manually">
+<h1>Updating/Downgrading Manually<a class="headerlink" href="#updating-downgrading-manually" title="Permalink to this headline">¶</a></h1>
+<p>When you update your system firmware version and boot the stock operating system, your Nintendo Switch burns a microscopic fuse to prevent your Switch from being able to downgrade. Essentially, if a stock firmware tries to boot but too many fuses are burnt for that specific firmware version, the system will simply power off, preventing you from booting.</p>
+<p>All custom firmware bypasses these fuse checks and the fuse burns. By enabling AutoRCM you can prevent the stock bootloader from ever running and keep your Switch in a state where it can be downgraded again the future.</p>
+<p>You can also use this guide as a way to upgrade your Switch if your Switch does not have access to the internet, uses 90DNS or is superbanned, and to downgrade your Switch to any firmware version.</p>
+<p>If you want to prevent fuse burns you can follow <a class="reference external" href="/hekate.html#enabling-autorcm">this guide first</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If something goes wrong or you need help, check <a class="reference external" href="/troubleshooting.html">troubleshooting</a>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-1-preparing-files">
+<h2>Step 1: Preparing Files<a class="headerlink" href="#step-1-preparing-files" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>You need to locate the firmware binaries for the firmware version you want to upgrade/downgrade to. These cannot be shared here as they are copyrighted.</p></li>
+<li><p>Make sure your SD card includes a basic Hekate/Atmosphere setup (such as the one installed when following this guide)</p></li>
+<li><p>Insert your SD card into your PC</p></li>
+<li><p>Create a new folder on the root of your SD card named <strong>“firmware”</strong></p></li>
+<li><p>Extract <strong>the contents</strong> of your firmware archive file into the new <strong>/firmware</strong> folder on your SD card</p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-2-installing-the-new-firmware-version">
+<h2>Step 2: Installing the New Firmware Version<a class="headerlink" href="#step-2-installing-the-new-firmware-version" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Insert your SD card into your Switch</p></li>
+<li><p>Launch Atmosphere CFW</p></li>
+<li><p><strong>IMPORTANT: Plug your Switch in to prevent the Switch from dying midway through the install process</strong></p></li>
+<li><p>Enter the Homebrew Menu through Album or title override</p></li>
+<li><p>Select <strong>Daybreak</strong></p></li>
+<li><p>In Daybreak, select <strong>Install</strong> and enter the <strong>/firmware</strong> folder you created earlier</p></li>
+<li><p>After processing, select <strong>Continue</strong></p></li>
+<li><p>If you are upgrading select <strong>Preserve settings</strong>. Otherwise, if you are downgrading, select <strong>Reset to factory settings</strong>, which will erase all save data.</p></li>
+<li><p>Select <strong>Install (FAT32 + exFAT)</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p>This “FAT32 + exFAT” version of the firmware contains both the FAT32 and exFAT filesystem drivers, so it will work with any SD card. If you are certain your SD card is FAT32 formatted, you can choose the option without exFAT instead. Choose the “FAT32 + exFAT” version if you are unsure.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Select <strong>Continue</strong></p></li>
+<li><p>Wait for the firmware update to finish</p>
+<ul class="simple">
+<li><p>This can be take little time or a long time depending on the situation. Be patient, and don’t worry if it finishes very quickly.</p></li>
+</ul>
+</li>
+<li><p>After installation, select <strong>Reboot</strong> and then <strong>Shutdown Now!</strong></p></li>
+</ol>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019-2020, noahc3 and friends
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
